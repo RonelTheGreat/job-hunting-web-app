@@ -1,1 +1,30 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+/* REGISTRATION FORM */
+.registration-form{
+  border: 1px dotted black;
+  width: 30%;
+  padding: 1%;
+  margin: 1% auto;
+  position: relative;
+}
+.registration-form input{
+  display: block;
+  padding: 0.7em;
+  width: 94%;
+  margin: 0.5%;
+}
+.registration-form .first-name{
+  display: inline;
+  width: 42%;
+}
+.registration-form .last-name{
+  width: 44%;
+  float: right;
+}
 
