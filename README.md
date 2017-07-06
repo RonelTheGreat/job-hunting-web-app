@@ -1,2 +1,2 @@
-# job-hunting-webapp
-# under construction, sorry for the inconvinience
+# job-hunting-web-app
+# under construction
