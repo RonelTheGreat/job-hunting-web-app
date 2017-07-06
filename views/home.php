@@ -1,2 +1,2 @@
 
-<h1>Welcome to a shitty home page!</h1>
+<h1>Welcome to a shitty home page! :D</h1>
