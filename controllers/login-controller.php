@@ -26,6 +26,7 @@
           // generate cookie
           $cstrong = true;
           $cookie = bin2hex(openssl_random_pseudo_bytes(60, $cstrong));
+          
           // generate a token to be saved in db
           $token = sha1($cookie);
           // insert token to db
@@ -41,6 +42,7 @@
         }else{
           echo 'Username or Password is incorrect';
         }
+
       }else{
         echo 'Username or Password is incorrect';
       }
