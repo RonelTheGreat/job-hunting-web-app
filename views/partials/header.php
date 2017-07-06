@@ -6,3 +6,12 @@
     <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
+
+  <nav>
+    <div class="top-nav">
+      <ul>
+        <li><a href="#">Sign in</a></li>
+        <li><a href="#">Sign out</a></li>
+      </ul>
+    </div>
+  </nav>
