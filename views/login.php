@@ -1,3 +1,4 @@
+<?php require '../controllers/login-controller.php'; ?>
 
 <?php include './partials/header.php'; ?>
 
