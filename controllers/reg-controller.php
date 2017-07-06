@@ -40,8 +40,8 @@
 
 
     if(!empty($fname && $lname && $username && $email && $password)){
-      // url to redirect user to home page
-      $url = '/jobhunting/views/home.php';
+      //url to redirect user to home page
+      $url = '/job-hunting-web-app/views/home.php';
 
       // instantiate new object
       $db = new Database;
@@ -60,6 +60,8 @@
       } catch (Exception $e) {
         echo $e->getMessage();
       }
+
+      // echo '<pre>', print_r($_POST), '</pre>';
 
     }
 
