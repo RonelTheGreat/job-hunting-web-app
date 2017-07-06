@@ -26,7 +26,7 @@
           // generate cookie
           $cstrong = true;
           $cookie = bin2hex(openssl_random_pseudo_bytes(60, $cstrong));
-          
+
           // generate a token to be saved in db
           $token = sha1($cookie);
           // insert token to db
@@ -34,7 +34,7 @@
                       array(':token'   => $token,
                             ':user_id' => $user[0]['user_id']));
 
-          // set cookie for the logged in user
+          // set cookie for the logged in user and redirect to homepage
           setcookie('JHID', $cookie, time() + (7 * 24 * 60 * 60), '/');
           unset($_POST);
           header('Location: ' . $url);
