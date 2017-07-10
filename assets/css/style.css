@@ -59,14 +59,3 @@ body{
 }
 
 /* LOGIN FORM*/
-.login-form{
-  border: 1px dotted black;
-  position: absolute;
-  right: 1%;
-  line-height: 3em;
-}
-.login-form input{
-  padding: 0.6em;
-  border-radius: 0.2em;
-  border: 1px solid rgb(229, 229, 229);
-}
