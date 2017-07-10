@@ -52,28 +52,28 @@
 
 
     if(!empty($fname && $lname && $username && $email && $password)){
-      // //url to redirect user to home page
-      // $url = '/job-hunting-web-app/views/home.php';
-      //
-      // // instantiate new object
-      // $db = new Database;
-      // // insert new user to db
-      // try {
-      //   $db->query('INSERT INTO users(fname, lname, username, email, password)
-      //               VALUES(:fname, :lname, :username, :email, :password)',
-      //               array(':fname'    => $fname,
-      //                     ':lname'    => $lname,
-      //                     ':username' => $username,
-      //                     ':email'    => $email,
-      //                     ':password' => $hashed_password));
-      //   unset($_POST);
-      //   header('Location: ' . $url);
-      //   exit;
-      // } catch (Exception $e) {
-      //   echo $e->getMessage();
-      // }
+      //url to redirect user to home page
+      $url = '/job-hunting-web-app/views/home.php';
 
-      // echo '<pre>', print_r($_POST), '</pre>';
+      // instantiate new object
+      $db = new Database;
+      // insert new user to db
+      try {
+        $db->query('INSERT INTO users(fname, lname, username, email, password)
+                    VALUES(:fname, :lname, :username, :email, :password)',
+                    array(':fname'    => $fname,
+                          ':lname'    => $lname,
+                          ':username' => $username,
+                          ':email'    => $email,
+                          ':password' => $hashed_password));
+        unset($_POST);
+        header('Location: ' . $url);
+        exit;
+      } catch (Exception $e) {
+        echo $e->getMessage();
+      }
+
+      echo '<pre>', print_r($_POST), '</pre>';
 
     }
 
