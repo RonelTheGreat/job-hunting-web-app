@@ -1,3 +1,4 @@
+<?php //require '../controllers/logout.php'; ?>
 <!DOCTYPE html>
 <html>
   <head>
