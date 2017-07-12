@@ -7,4 +7,4 @@
     $userinfo = $user->getUserInfo();
   }
 
-  // echo '<pre>', print_r($userinfo), '</pre>'w;
+  // echo '<pre>', print_r($userinfo), '</pre>';

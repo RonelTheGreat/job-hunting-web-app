@@ -35,25 +35,17 @@
                           ':username' => $username,
                           ':email'    => $email,
                           ':password' => $hashed_password));
-        // generate cookie
-        $cstrong = true;
-        $cookie = bin2hex(openssl_random_pseudo_bytes(60, $cstrong));
 
-        // generate a token to be saved in db
-        $token = sha1($cookie);
-        // insert token to db
-        //  Database::query('INSERT INTO login_tokens(token, user_id) VALUES(:token, :user_id)',
-        //             array(':token'   => $token,
-        //                   ':user_id' => $this->isLoggedIn()[0]['user_id']));
-
-        // set cookie for the logged in user and redirect to homepage
-        setcookie('JHID', $cookie, time() + (7 * 24 * 60 * 60), '/');
-        // redirect user to homepage
-        $this->redirectTo('/job-hunting-web-app/views/home.php');
+        $this->redirectTo('/job-hunting-web-app/views/login.php');
 
       } catch (Exception $e) {
         echo $e->getMessage();
       }
+    }
+
+
+    public function authUser(){
+
     }
 
 
