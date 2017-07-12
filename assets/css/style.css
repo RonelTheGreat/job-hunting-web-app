@@ -70,6 +70,7 @@ body{
 .login-form h3{
   text-align: center;
 }
+
 .login-form a, visited {
   text-decoration: none;
   color: rgb(0, 150, 134);
@@ -83,6 +84,7 @@ body{
 .login-form .create-acc-link{
    padding-left: 6em;
 }
+
 .login-form input{
   width: 91%;
   padding: 0.8em;
@@ -93,6 +95,7 @@ body{
 .login-form input:focus{
   outline: 1px solid rgb(0, 150, 134);
 }
+
 .login-form .login-btn{
   border: 1px solid rgb(229, 229, 229);
   border-radius: 4px;
