@@ -1,4 +1,4 @@
-body{
+body, html{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   padding: 0;
@@ -10,8 +10,13 @@ body{
 /* NAVIGATION BAR */
 
 .top-nav{
-  border: 1px solid rgb(229, 229, 229);
+  /*border: 1px solid rgb(229, 229, 229);*/
+
   height: 3em;
+  margin: 0;
+  padding: 0;
+  background: rgb(0, 150, 134);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 .top-nav ul{
   display: flex;
@@ -24,10 +29,11 @@ body{
   padding: 0;
 }
 .top-nav ul li a, visited{
-  color: rgb(31, 31, 31);
+  color: #fff;
   text-decoration: none;
   /*border: 1px dotted purple;*/
   padding: 0.9em;
+  font-size: 0.85em;
 }
 .top-nav ul li a:hover{
   background: rgba(41, 41, 41, 0.1);
@@ -35,26 +41,59 @@ body{
 
 /* REGISTRATION FORM */
 .registration-form{
-  border: 1px dotted black;
+  font-size: 1em;
   width: 30%;
-  padding: 1%;
-  margin: 1% auto;
-  position: relative;
+  padding: 1.2%;
+  margin: 10% auto;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid rgb(229, 229, 229);
 }
+.registration-form h2{
+  text-align: center;
+}
+
+.registration-form a, visited {
+  text-decoration: none;
+  color: rgb(0, 150, 134);
+  font-size: 0.8em;
+  padding: 0.8em;
+  margin: 0.3em;
+}
+.registration-form a:hover{
+  text-decoration: underline;
+}
+
 .registration-form input{
+  width: 91%;
+  padding: 0.8em;
+  margin: 0.3em;
+  border-radius: 4px;
+  border: 1px solid rgb(219, 219, 219);
+}
+.registration-form input:focus{
+  outline: 1px solid rgb(0, 150, 134);
+}
+
+.registration-form .reg-btn{
+  width: 97%;
+  padding: 0.8em;
+  margin: 0.6em 0.3em;
   display: block;
-  padding: 0.7em;
-  width: 94%;
-  margin: 0.5%;
+  color: #fff;
+  background: rgb(0, 150, 134);
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 4px;
 }
-.registration-form .first-name{
-  display: inline;
-  width: 42%;
+.registration-form .reg-btn:hover{
+  background: rgb(0, 93, 83);
 }
-.registration-form .last-name{
-  width: 44%;
-  float: right;
+.registration-form .reg-form-footer{
+  font-size: 0.8em;
+  padding: 0.8em 0.2em 0.8em;
+  margin: 0.3em;
 }
+
 
 /* LOGIN FORM*/
 

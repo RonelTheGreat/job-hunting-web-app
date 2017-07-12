@@ -1,5 +1,6 @@
 <?php require '../controllers/reg-controller.php'; ?>
 
+<?php include './partials/header.php'; ?>
 
   <div class="registration-form">
     <h2>Create a New Account</h2>
@@ -12,9 +13,8 @@
       <input type="email" name="email" placeholder="Email Address" value="<?= ($email) ?? '';?>">
       <input type="password" name="password" placeholder="Password" value="<?= ($password) ?? '';?>">
       <input type="password" name="cpassword" placeholder="Re-type Password">
-      <button type="submit" name="register"> I'm in!</button>
+      <button class="reg-btn" type="submit" name="register"> I'm in!</button>
 
     </form>
-    <span>Already have an account? </span> <a href="login.php">Sign in</a>
+    <span class="reg-form-footer">Already have an account? </span> <a href="login.php">Sign in</a>
   </div>
-  
