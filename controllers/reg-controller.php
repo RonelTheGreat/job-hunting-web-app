@@ -1,5 +1,4 @@
-
-<?php require '../classes/Database.php';
+<?php require '../classes/User.php';
 
   $fname = '';
   $lname = '';
@@ -52,34 +51,22 @@
 
 
     if(!empty($fname && $lname && $username && $email && $password)){
-      //url to redirect user to home page
-      $url = '/job-hunting-web-app/views/home.php';
 
       // instantiate new object
-      $db = new Database;
+      $user = new User;
       // insert new user to db
-      try {
-        $db->query('INSERT INTO users(fname, lname, username, email, password)
-                    VALUES(:fname, :lname, :username, :email, :password)',
-                    array(':fname'    => $fname,
-                          ':lname'    => $lname,
-                          ':username' => $username,
-                          ':email'    => $email,
-                          ':password' => $hashed_password));
-        unset($_POST);
-        header('Location: ' . $url);
-        exit;
-      } catch (Exception $e) {
-        echo $e->getMessage();
-      }
+      $user->insertUser($fname, $lname, $username, $email, $password);
 
-      echo '<pre>', print_r($_POST), '</pre>';
+      // echo '<pre>', print_r($_POST), '</pre>';
 
     }
 
   }
 
-  // filter text input
+  /**
+  * filter input data
+  *@params $data ; to be escaped
+  */
   function filter($data) {
    $data = trim($data);
    $data = stripslashes($data);

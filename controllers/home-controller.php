@@ -5,6 +5,6 @@
   // check if the user is logged in
   if($user->isLoggedIn()){
     $userinfo = $user->getUserInfo();
-  }else{
-    $user->redirectTo('/job-hunting-web-app/views/login.php');
   }
+
+  // echo '<pre>', print_r($userinfo), '</pre>'w;

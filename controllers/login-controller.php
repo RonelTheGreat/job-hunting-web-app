@@ -6,11 +6,11 @@
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if(!empty($_POST['username'])){
-      $username = $_POST['username'];
+      $username = filter($_POST['username']);
     }
 
     if(!empty($_POST['password'])){
-      $password = $_POST['password'];
+      $password = filter($_POST['password']);
     }
 
     if(!empty($username && $password)){
@@ -47,7 +47,16 @@
         echo 'Username or Password is incorrect';
       }
 
-    }else{
-      echo 'Please don\'t leave a blank field';
     }
+  }
+
+  /**
+  * filter input data
+  *@params $data ; to be escaped
+  */
+  function filter($data) {
+   $data = trim($data);
+   $data = stripslashes($data);
+   $data = htmlspecialchars($data);
+   return $data;
   }

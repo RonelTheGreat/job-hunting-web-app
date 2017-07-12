@@ -2,7 +2,7 @@
 <?php
 
   class Database{
-    
+
     /**
     * handles connection to db
     */
@@ -30,5 +30,6 @@
         return $data;
       }
     }
+
 
   }
