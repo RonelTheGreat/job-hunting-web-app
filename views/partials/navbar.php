@@ -1,5 +1,10 @@
 
   <nav>
+
+    <div class="logo">
+      <a href="../views/home.php">JobHunter.com<!-- <img src="../assets/img/logo.png" alt=""> --></a>
+    </div>
+
     <div class="top-nav">
       <ul>
         <?php if ($user->isLoggedIn()): ?>

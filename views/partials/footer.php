@@ -1,6 +1,6 @@
 
     <footer>
-      <p>All rights Reserverd. 2017</p>
+      <p>All rights Reserved. 2017</p>
     </footer>
   </body>
 </html>

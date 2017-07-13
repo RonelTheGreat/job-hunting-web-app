@@ -10,7 +10,7 @@
       <button class="login-btn" type="submit" name="login">Sign in</button>
       <p>
         <a href="#">Forgot Password?</a>
-        <a class="create-acc-link" href="register.php">Create a New Account </a>
+        <a class="create-acc-link" href="register.php">Create a Account </a>
       </p>
     </form>
   </div>
