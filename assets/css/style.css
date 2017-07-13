@@ -30,7 +30,7 @@ body, html{
   height: 3em;
   margin: 0;
   padding: 0;
-  background: rgb(0, 150, 134);
+  background: #2ecc71;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 .top-nav ul{
@@ -70,7 +70,7 @@ body, html{
 
 .registration-form a, visited {
   text-decoration: none;
-  color: rgb(0, 150, 134);
+  color: #3498db;
   font-size: 0.8em;
   padding: 0.8em;
   margin: 0.3em;
@@ -96,12 +96,12 @@ body, html{
   margin: 0.6em 0.3em;
   display: block;
   color: #fff;
-  background: rgb(0, 150, 134);
+  background: #2ecc71;
   border: 1px solid rgb(229, 229, 229);
   border-radius: 4px;
 }
 .registration-form .reg-btn:hover{
-  background: rgb(0, 93, 83);
+  background: #0AC25A;
 }
 .registration-form .reg-form-footer{
   font-size: 0.8em;
@@ -126,7 +126,7 @@ body, html{
 
 .login-form a, visited {
   text-decoration: none;
-  color: rgb(0, 150, 134);
+  color: #3498db;
   font-size: 0.8em;
   padding: 0.8em;
   margin: 0.3em;
@@ -150,18 +150,18 @@ body, html{
 }
 
 .login-form .login-btn{
-  border: 1px solid rgb(229, 229, 229);
+  border: 1px solid #2ecc71;
   border-radius: 4px;
   width: 97%;
   padding: 0.8em;
   margin: 0.3em;
   display: block;
   color: #fff;
-  background: rgb(0, 150, 134);
+  background: #2ecc71;
   border: rgb(0, 150, 134);
 }
 .login-form .login-btn:hover{
-  background: rgb(0, 93, 83);
+  background: #0AC25A;
 }
 
 /* HOME PAGE*/
@@ -173,6 +173,30 @@ main .main {
   margin: 2% auto;
   min-height: 40em;
 }
+.main .search{
+  border: 1px dotted black;
+  position: relative;
+}
+.main .search input{
+  display: inline;
+  width: 50%;
+  padding: 0.8em;
+  /*margin: 0.3em;*/
+  border-radius: 4px;
+  border: 1px solid rgb(219, 219, 219);
+}
+.search .search-btn{
+  float: right;
+  margin-right: 5%;
+  border: 1px solid #2ecc71;
+  border-radius: 4px;
+  width: 15%;
+  padding: 0.8em;
+  /*margin: 0.3em;*/
+  color: #fff;
+  background: #2ecc71;
+  border: rgb(0, 150, 134);
+}
 
 /* MAIN FOOTER */
 
@@ -182,5 +206,5 @@ footer {
   color: #fff;
   padding: 1%;
   text-align: center;
-  background: rgb(0, 150, 134);
+  background: #2ecc71;
 }

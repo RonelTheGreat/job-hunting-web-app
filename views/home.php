@@ -5,7 +5,12 @@
 
   <main>
     <div class="main">
-      <h1>Welcome to a shitty home page <a href="#"><?= ($userinfo[0]['fname']) ?? '';?></a> :D</h1>
+      <div class="search">
+        <!-- <form action="index.html" method="post">
+          <input type="text" name="search" placeholder="Search a Job">
+          <button class="search-btn" type="submit" name="search_btn">Search</button>
+        </form> -->
+      </div>
     </div>
   </main>
 
