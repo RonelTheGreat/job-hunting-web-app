@@ -1,6 +1,6 @@
 
     <footer>
-      <p>All rights Reserved. 2017</p>
+      <p>&copy 2017 Bad Ass Company Inc.</p>
     </footer>
   </body>
 </html>

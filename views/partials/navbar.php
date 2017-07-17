@@ -2,12 +2,15 @@
   <nav>
 
     <div class="logo">
-      <a href="../views/home.php">JobHunter.com<!-- <img src="../assets/img/logo.png" alt=""> --></a>
+      <!-- <img src="../assets/img/topnav.png" alt=""> -->
+      <a href="home.php" title="Go back to JobHunt"><img src="../assets/img/logo2.png" alt=""></a>
     </div>
 
     <div class="top-nav">
       <ul>
+
         <?php if ($user->isLoggedIn()): ?>
+        <li><a href="#"><?= $userinfo[0]['username'];?></a></li>
         <li><a href="../controllers/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> LOGOUT</a></li>
         <?php else:  ?>
         <li>

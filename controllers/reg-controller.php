@@ -1,4 +1,5 @@
 <?php require '../classes/User.php';
+      require '../classes/Misc.php';
 
   $fname = '';
   $lname = '';
@@ -11,65 +12,56 @@
   // capture input data
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+    // validate first name
     if(!empty($_POST['fname'])){
-      if(preg_match("/^[a-zA-Z ]*$/", filter($_POST['fname']))){
-        $fname = $_POST['fname'];
-      } else {
-        echo 'Invalid Firstname';
+      if(preg_match("/^[a-zA-Z ]*$/", $_POST['fname'])){
+        $fname = Misc::sanitize($_POST['fname']);
       }
     }
 
+    // validate last name
     if(!empty($_POST['lname'])){
-      if(preg_match("/^[a-zA-Z ]*$/", filter($_POST['lname']))){
-        $lname = filter($_POST['lname']);
-      }else{
-        echo 'Invalid Last Name';
+      if(preg_match("/^[a-zA-Z ]*$/", $_POST['lname'])){
+        $lname = Misc::sanitize($_POST['lname']);
       }
     }
 
+    // validate username
     if(!empty($_POST['username'])){
-      if(preg_match("/^[a-zA-Z0-9]*$/", filter($_POST['username']))){
-        $username = filter($_POST['username']);
-      }else{
-        echo 'Username must not contain white spaces and special characters';
+      if(preg_match("/^[a-zA-Z0-9]*$/", $_POST['username'])){
+        $username = Misc::sanitize($_POST['username']);
       }
     }
 
+    // validate email
     if(!empty($_POST['email'])){
       if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
         $email = $_POST['email'];
       }
     }
 
+    // confirm password
     if(!empty($_POST['cpassword']) && !empty($_POST['password'])){
       if($_POST['password'] == $_POST['cpassword']){
-        $password = filter($_POST['password']);
-        // hash password before saving to DB
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $password = Misc::sanitize($_POST['password']);
       }
     }
 
-
+    // final check
     if(!empty($fname && $lname && $username && $email && $password)){
 
-      // instantiate new object
+      // instantiate new User object
       $user = new User;
+      // set credentials
+      $user->setFname($fname);
+      $user->setLname($lname);
+      $user->setUsername($username);
+      $user->setEmail($email);
+      $user->setPassword($password);
       // insert new user to db
-      $user->insertUser($fname, $lname, $username, $email, $password);
-
-      // echo '<pre>', print_r($_POST), '</pre>';
-
+      $user->create();
+      // authenticate user
+      $user->authorize();
     }
 
-  }
-
-  /**
-  * filter input data
-  *@params $data ; to be escaped
-  */
-  function filter($data) {
-   $data = trim($data);
-   $data = stripslashes($data);
-   $data = htmlspecialchars($data);
-   return $data;
   }

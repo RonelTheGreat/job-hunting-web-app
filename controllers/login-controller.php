@@ -1,62 +1,26 @@
-<?php require '../classes/Database.php';
+<?php require '../classes/User.php';
+      require '../classes/Misc.php';
 
   $username = '';
   $password = '';
 
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
+    // validate username
     if(!empty($_POST['username'])){
-      $username = filter($_POST['username']);
+      $username = Misc::sanitize($_POST['username']);
     }
 
+    // validate password
     if(!empty($_POST['password'])){
-      $password = filter($_POST['password']);
+      $password = Misc::sanitize($_POST['password']);
     }
 
+    // final check
     if(!empty($username && $password)){
-      // url to redirect after checking user
-      $url = '/job-hunting-web-app/views/home.php';
-
-      // check if username exists in db
-      $db = new Database;
-      $user = $db->query('SELECT password, user_id FROM users WHERE username = :username', array(':username' => $username));
-
-      if($user){
-        if(password_verify($password, $user[0]['password'])){
-          // generate cookie
-          $cstrong = true;
-          $cookie = bin2hex(openssl_random_pseudo_bytes(60, $cstrong));
-
-          // generate a token to be saved in db
-          $token = sha1($cookie);
-          // insert token to db
-           $db->query('INSERT INTO login_tokens(token, user_id) VALUES(:token, :user_id)',
-                      array(':token'   => $token,
-                            ':user_id' => $user[0]['user_id']));
-
-          // set cookie for the logged in user and redirect to homepage
-          setcookie('JHID', $cookie, time() + (7 * 24 * 60 * 60), '/');
-          unset($_POST);
-          header('Location: ' . $url);
-          exit;
-        }else{
-          echo 'Username or Password is incorrect';
-        }
-
-      }else{
-        echo 'Username or Password is incorrect';
-      }
-
+      $user = new User;
+      $user->setUsername($username);
+      $user->setPassword($password);
+      $user->authorize();
     }
-  }
-
-  /**
-  * filter input data
-  *@params $data ; to be escaped
-  */
-  function filter($data) {
-   $data = trim($data);
-   $data = stripslashes($data);
-   $data = htmlspecialchars($data);
-   return $data;
   }
