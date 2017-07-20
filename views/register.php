@@ -14,7 +14,7 @@
 
       <input type="text" name="fname" placeholder="First Name" value="<?= ($fname) ?? '';?>">
       <input type="text" name="lname" placeholder="Last Name" value="<?= ($lname) ?? '';?>">
-      <input type="text" name="username" placeholder="Username" value="<?= ($username) ?? '';?>">
+      <input type="text" name="username" placeholder="Username" value="<?= ($username) ?? '';?>" maxlength="15">
       <input type="email" name="email" placeholder="Email Address" value="<?= ($email) ?? '';?>">
       <input type="password" name="password" placeholder="Password" value="<?= ($password) ?? '';?>">
       <input type="password" name="cpassword" placeholder="Re-type Password">

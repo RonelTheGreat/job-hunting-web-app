@@ -7,7 +7,6 @@
 
   <main>
 
-
     <div class="search">
       <input type="text" name="search" placeholder="Find Jobs">
       <button class="primary-btn search-btn" type="submit" name="search_btn">
@@ -18,12 +17,13 @@
     <!-- Link for posting a new job -->
     <div class="post-job-link">
       <?php if ($user->isLoggedIn()): ?>
-      <a class="post-job" href="jobpost.php"><i class="fa fa-pencil"></i> Post a New Job</a>
-      <?php endif; ?>
+      <a href="jobpost.php"><i class="fa fa-pencil"></i> Post a New Job</a>
+    <?php endif; ?>
     </div>
 
 
     <div class="job-posts">
+
       <?php foreach ($jobs as $job): ?>
         <div class="job">
 
@@ -47,7 +47,7 @@
 
           <div class="content">
             <p><?= substr($job['description'], 0, 200); ?>...</p>
-            <span><a class="check-out-job" href="job.php">Check out this Job</a></span>
+            <span><a class=" check-out-job primary-link" href="job.php">Check out this Job</a></span>
           </div>
 
 

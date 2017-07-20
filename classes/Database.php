@@ -1,4 +1,3 @@
-
 <?php
 
   class Database{
@@ -18,7 +17,7 @@
 
     /**
     * handles sql statements
-    *@params $query, $params=array()
+    *@param $query, $params=array()
     */
     public function query($query, $params=[]){
       $stmt = $this->handler()->prepare($query);

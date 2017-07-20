@@ -10,14 +10,16 @@ body, html{
 
 /* GLOBAL */
 .primary-btn{
-  padding: 0.8em;
+  padding: 0.9em;
   color: #fff;
-  background: rgb(5, 57, 107);
-  border: 1px rgb(5, 57, 107);
+  background: #3498db;
+  border: 1px solid #3498db;
+  /*background: rgb(5, 57, 107);
+  border: 1px rgb(5, 57, 107);*/
   border-radius: 3px;
 }
 .primary-btn:hover{
-  background: rgb(15, 89, 161);
+  background: #0f85d1;
 }
 
 input[type=text], input[type=password], input[type=email]{
@@ -29,19 +31,32 @@ input[type=text], input[type=password], input[type=email]{
 }
 input[type=text]:focus, input[type=email]:focus, input[type=password]:focus{
   outline: none;
-  border: 2px solid rgb(5, 57, 107);
+  border: 2px solid #0f85d1;
   /*box-shadow: 0 0 0 1px rgb(55, 150, 131);*/
 }
 input[type=text]:hover, input[type=password]:hover, input[type=email]:hover{
-  border: 2px solid rgb(15, 89, 161);
+  border: 2px solid #3498db;
 }
 
-a:link, visited{
+a, visited{
+  /*color: rgb(15, 89, 161);*/
+  /*color: #3498db;*/
+  color: rgb(239, 239, 239);
   text-decoration: none;
-  color: rgb(5, 57, 107);
   font-size: 0.8em;
 }
 a:hover{
+  color: #fff;
+  /*color: #0f85d1;*/
+  text-decoration: underline;
+}
+
+.primary-link, visited{
+  background: #3498db;
+  color: #fff;
+  border-radius: 2px;
+}
+.primary-link:hover{
   text-decoration: underline;
 }
 
@@ -57,7 +72,8 @@ a:hover{
   color: #fff;
 }
 .logo img{
-  width: 25%;
+  width: 15%;
+  top: 0;
   /*border: 1px dotted white;*/
 }
 
@@ -74,8 +90,43 @@ nav img {
   margin: 0;
   padding: 0;
   /*border-bottom: 2px solid rgb(5, 57, 107);*/
+  background: #3498db;
+  /*border-bottom: 1px solid rgb(224, 224, 224);*/
+}
+
+.top-nav .acc-settings{
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  width: 14%;
+  text-align: center;
+  /*border: 1px dotted black;*/
+}
+.top-nav .acc-settings .username{
+  color: #fff;
+}
+.top-nav .acc-settings:hover .dropdown{
+  display: block;
+}
+.top-nav .acc-settings .dropdown{
+  display: none;
+  border: 1px solid rgb(224, 224, 224);
   background: #fff;
-  border-bottom: 1px solid rgb(224, 224, 224);
+  margin-top: 1.1em;
+  text-align: center;
+}
+
+.top-nav .acc-settings .dropdown a, visited{
+  text-decoration: none;
+  color: #3498db;
+  border: 1px solid rgb(224, 224, 224);
+  display: block;
+  padding: 0.5em;
+  /*border: 1px dotted purple;*/
+}
+.top-nav .acc-settings .dropdown a:hover{
+  background: #0f85d1;
+  color: #fff;
 }
 
 .top-nav ul{
@@ -94,12 +145,11 @@ nav img {
   padding: 0.9em;
   font-size: 0.8em;
 }
+
 .top-nav ul li a > i{
   font-size: 1.2em;
 }
-.top-nav ul li a:hover{
-  color: rgb(15, 89, 161);
-}
+
 
 
 /* REGISTRATION FORM */
@@ -117,6 +167,7 @@ nav img {
 }
 
 .registration-form a, visited {
+  color: #3498db;
   padding: 0.8em;
   margin: 0.3em;
 }
@@ -150,6 +201,7 @@ nav img {
 }
 
 .login-form a, visited {
+  color: #3498db;
   padding: 0.8em;
   margin: 0.3em;
 }
@@ -158,6 +210,7 @@ nav img {
 }
 
 .login-form .login-btn{
+  font-size: 0.8em;
   text-transform: uppercase;
   width: 97%;
   margin: 0.3em;
@@ -195,21 +248,29 @@ main .search-btn{
 
 main .post-job-link{
   /*border: 1px dotted black;*/
-  margin: 0;
+  margin-top: 4%;
 }
 main .post-job-link a, visited{
   margin-left: 74.5%;
   text-decoration: none;
-  padding: 0.8em;
-  border: 2px solid rgb(5, 57, 107);
-  border-radius: 4px;
+  padding: 0.9em 0.9em;
+  /*border: 2px solid rgb(15, 89, 163);*/
+  background: #3498db;
+  color: #fff;
+  /*border: 2px solid rgb(15, 89, 161);*/
+  border-radius: 2px;
 }
 main .post-job-link > a:hover{
   text-decoration: underline;
-  color: rgb(15, 89, 163);
-  border: 2px solid rgb(15, 89, 161);
+  background: #0f85d1;
+  /*color: rgb(5, 57, 107);*/
+  /*border: 2px solid rgb(5, 57, 107);*/
 }
 
+main .search-btn{
+  border: none;
+  color: #3498db;
+}
 main .search-btn:hover{
   color: #fff;
 }
@@ -225,6 +286,7 @@ main .job-posts {
   margin: 4% 30%;
   min-height: 20em;
 }
+
 main .job{
   border: 1px solid rgb(237, 245, 225);
   width: 94%;
@@ -241,12 +303,6 @@ main .job-header .title{
   font-size: 1.18em;
   color: rgb(15, 89, 161);
   margin: 0.2em 0em;
-}
-main .job-header .location{
-  /*margin-right: 0.5em;*/
-}
-main .job-header .salary{
-  /*margin-right: 0.5em;*/
 }
 main .job-header .date-posted{
   font-size: 0.75em;
@@ -265,18 +321,15 @@ main .job .content{
   font-size: 0.9em;
 }
 main .job .content .check-out-job{
+  margin-left: 75%;
   padding: 0.5em;
-  /*float: right;*/
   font-size: 0.9em;
-  border: 2px solid rgb(5, 57, 107);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 main .job .content .check-out-job:hover{
-  text-decoration: underline;
-  color: rgb(15, 89, 163);
-  border: 2px solid rgb(15, 89, 161);
+  color: #fff;
+  background: #0f85d1;
 }
-
 
 
 /* JOB-POST PAGE */
@@ -326,10 +379,21 @@ main .job .content .check-out-job:hover{
   padding: 0.5em;
   margin: 0.85%;
   color: #fff;
-  background: rgb(5, 57, 107);
-  border: 1px solid rgb(5, 57, 107);
-  border-radius: 4px;
+  background: #3498db;
+  border: 1px solid #3498db;
+  border-radius: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('img/chevron_down.png');
 }
+
+/*.job-form .fa-chevron-down{
+  position: absolute;
+  right: 1em;
+  bottom: 17%;
+  right: 10%;
+}*/
 
 .job-form .postjob-btn{
   text-transform: uppercase;
@@ -338,6 +402,28 @@ main .job .content .check-out-job:hover{
   padding: 0.8em 1em;
 }
 
+
+/* PASSWORD RESET PAGE */
+.password-reset{
+  /*border: 1px dotted black;*/
+  min-height: 25em;
+}
+.password-reset .reset-form{
+  width: 27%;
+  margin: 5% auto;
+  padding: 0.4em;
+  background: #fff;
+  border: 2px solid rgb(224, 224, 224);
+  border-radius: 4px;
+}
+.password-reset .reset-form h2{
+  text-align: center;
+}
+.password-reset .reset-form .reset-btn{
+  margin: 1%;
+  display: block;
+  width: 97.6%;
+}
 
 /* MAIN FOOTER */
 footer {

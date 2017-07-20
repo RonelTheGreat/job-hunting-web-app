@@ -8,5 +8,6 @@
     <link rel="stylesheet" href="../assets/lib/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://use.fontawesome.com/744cd1c44e.js"></script>
   </head>
   <body>

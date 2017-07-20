@@ -7,76 +7,51 @@
     private $username;
     private $email;
     private $password;
+    private $user_id;
+
     private $url;
 
 
-    public function setFname($fname){
+    /**
+     * construct user credentials
+     * @param {string} fname, lname, email, username, password
+     */
+    public function __construct($fname='', $lname='', $email='', $username='', $password=''){
       $this->fname = $fname;
-    }
-    public function getFname(){
-      return $this->fname;
-    }
-
-
-    public function setLname($lname){
       $this->lname = $lname;
-    }
-    public function getLname(){
-      return $this->lname;
-    }
-
-
-    public function setUsername($username){
-      $this->username = $username;
-    }
-    public function getUsername(){
-      return $this->username;
-    }
-
-
-    public function setEmail($email){
       $this->email = $email;
-    }
-    public function getEmail(){
-      return $this->email;
-    }
-
-
-    public function setPassword($password){
+      $this->username = $username;
       $this->password = $password;
-    }
-    public function getPassword(){
-      return $this->password;
     }
 
 
     /**
-    * insert a new user to DB
-    */
+     * insert a new user to DB
+     */
     public function create(){
       $hashed_password = password_hash($this->password, PASSWORD_DEFAULT);
       try {
         Database::query('INSERT INTO users(fname, lname, username, email, password)
-                    VALUES(:fname, :lname, :username, :email, :password)',
-                    array(':fname'    => $this->fname,
-                          ':lname'    => $this->lname,
-                          ':username' => $this->username,
-                          ':email'    => $this->email,
-                          ':password' => $hashed_password));
-        // $this->redirectTo('/job-hunting-web-app/views/login.php');
+                         VALUES(:fname, :lname, :username, :email, :password)',
+                         array(':fname'    => $this->fname,
+                               ':lname'    => $this->lname,
+                               ':username' => $this->username,
+                               ':email'    => $this->email,
+                               ':password' => $hashed_password));
       } catch (Exception $e) {
-        echo $e->getMessage();
+        echo 'An error has occured! :(';
+        // echo $e->getMessage();
       }
     }
 
 
     /**
-    * authenticate a new registered user (generate login_token and cookie)
-    */
+     * authorize a new registered user (generate login_token and cookie)
+     */
     public function authorize(){
       // check if username exists in db
       $user = Database::query('SELECT password, user_id FROM users WHERE username = :username',
-                              array(':username' => $this->username));
+                               array(':username' => $this->username));
 
       if($user){
         // verify password
@@ -102,16 +77,16 @@
 
 
     /**
-    * check if the user is logged-in based on the cookie stored
-    */
+     * check if the user is logged-in based on the cookie stored
+     */
     public function isLoggedIn(){
       if(isset($_COOKIE['JHID'])){
         $cookie = $_COOKIE['JHID'];
         $token = sha1($cookie);
-        $user_id = Database::query('SELECT user_id FROM login_tokens WHERE token = :token',
+        $user = Database::query('SELECT user_id FROM login_tokens WHERE token = :token',
                                     array(':token' => $token));
-        if($user_id){
-          return $user_id;
+        if($user){
+          return $this->user_id = $user[0]['user_id'];
         }
 
       } else {
@@ -121,12 +96,11 @@
 
 
     /**
-    * grabs user information based on the logged-in user's id
-    */
-    public function getInfo(){
-      $userid = $this->isLoggedIn()[0]['user_id'];
-      $user_info = $this->query('SELECT * FROM users WHERE user_id = :user_id', array(':user_id' => $userid));
-      return $user_info;
+     * grabs user information based on the logged-in user's id
+     */
+    public function getUserInfo(){
+      return $user_info = $this->query('SELECT user_id, fname, lname, username, email FROM users WHERE user_id = :user_id',
+                                        array(':user_id' => $this->user_id));
     }
 
 
@@ -134,20 +108,18 @@
     * logout user
     */
     public function logout(){
-      $userid = $this->isLoggedIn()[0]['user_id'];
       // expire cookie
       setcookie('JHID', '', time() - (7 * 24 * 60 * 60), '/');
-      // unset cookie
       unset($_COOKIE['JHID']);
       // delete cookie from DB and redirect
-      $this->query('DELETE FROM login_tokens WHERE user_id = :user_id', array(':user_id' => $userid));
+      $this->query('DELETE FROM login_tokens WHERE user_id = :user_id', array(':user_id' => $this->user_id));
       $this->redirectTo('/job-hunting-web-app/views/login.php');
     }
 
 
     /**
     * handles redirections
-    *@params url
+    * @param url
     */
     public function redirectTo($url){
       $this->url = $url;
@@ -155,6 +127,7 @@
         unset($_POST);
       }
       header('Location: ' . $this->url);
+      exit;
     }
 
   }

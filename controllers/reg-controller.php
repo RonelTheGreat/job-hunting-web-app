@@ -29,7 +29,9 @@
     // validate username
     if(!empty($_POST['username'])){
       if(preg_match("/^[a-zA-Z0-9]*$/", $_POST['username'])){
-        $username = Misc::sanitize($_POST['username']);
+        if(strlen($_POST['username']) <= 15){
+          $username = Misc::sanitize($_POST['username']);
+        }
       }
     }
 
@@ -51,16 +53,10 @@
     if(!empty($fname && $lname && $username && $email && $password)){
 
       // instantiate new User object
-      $user = new User;
-      // set credentials
-      $user->setFname($fname);
-      $user->setLname($lname);
-      $user->setUsername($username);
-      $user->setEmail($email);
-      $user->setPassword($password);
+      $user = new User($fname, $lname, $email, $username, $password);
       // insert new user to db
       $user->create();
-      // authenticate user
+      // authorize user
       $user->authorize();
     }
 

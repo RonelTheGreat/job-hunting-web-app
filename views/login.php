@@ -14,6 +14,7 @@
       <p><input type="password" name="password" placeholder="Password" value=""></p>
       <button class="primary-btn login-btn" type="submit" name="login">Login</button>
       <p>
+        <!-- <span>By signing up, you agree to our Terms of Use and Privacy Policy.</span> -->
         <a href="#">Forgot Password?</a>
         <a class="create-acc-link" href="register.php">Create an Account </a>
       </p>

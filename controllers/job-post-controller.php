@@ -1,5 +1,5 @@
 <?php require '../classes/Misc.php';
-      require '../classes/User.php';
+      require 'home-controller.php';
 
   $title = '';
   $location = '';
@@ -7,10 +7,8 @@
   $salary = '';
   $jobtype = '';
 
-  $user = new User;
-
   if($user->isLoggedIn()){
-    $user_id = $user->isLoggedIn()[0]['user_id'];
+    $user_id = $userinfo[0]['user_id']; 
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
       if(!empty($_POST['title'])){

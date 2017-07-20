@@ -1,10 +1,13 @@
 <?php
 
+  /**
+  * Miscellaneous
+  */
   class Misc {
 
     /**
     * sanitize user input
-    * @params data to be sanitized
+    * @param data
     */
     public static function sanitize($data){
       $data = trim($data);
@@ -16,7 +19,7 @@
 
     /**
     * convert datetime to hours ago, min ago, days ago
-    * params datetime or timestamp, full format
+    * @param datetime or timestamp, full format
     */
     public static function timeElapsed($datetime, $full = false) {
         $now = new DateTime;

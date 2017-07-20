@@ -1,3 +1,1 @@
-<?php require '../classes/User.php';
-
-  $user = new User;
+<?php include 'home-controller.php';

@@ -22,7 +22,7 @@
       <select class="job-type" name="jobtype">
         <option class="option" value="full_time">Full-time</option>
         <option class="option" value="part_time">Part-time</option>
-      </select> <br>
+      </select><i class="fa fa-chevron-down"></i> <br>
 
       <button class="postjob-btn primary-btn" type="submit" name="post_job">Post Job</button>
     </form>

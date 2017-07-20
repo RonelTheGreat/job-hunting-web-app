@@ -18,9 +18,7 @@
 
     // final check
     if(!empty($username && $password)){
-      $user = new User;
-      $user->setUsername($username);
-      $user->setPassword($password);
+      $user = new User('', '', '', $username, $password);
       $user->authorize();
     }
   }
