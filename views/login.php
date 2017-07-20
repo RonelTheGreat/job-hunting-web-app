@@ -4,7 +4,7 @@
 
   <div class="logo">
     <!-- <img src="../assets/img/topnav.png" alt=""> -->
-    <a href="home.php" title="Go back to JobHunt"><img src="../assets/img/logo2.png" alt=""></a>
+    <a href="home.php" title="Go back to JobHunt"><img src="../assets/img/logo_sample.png" alt=""></a>
   </div>
 
   <div class="login-form">

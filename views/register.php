@@ -4,7 +4,7 @@
 
   <div class="logo">
     <!-- <img src="../assets/img/topnav.png" alt=""> -->
-    <a href="home.php"><img src="../assets/img/logo2.png" alt=""></a>
+    <!-- <a href="home.php"><img src="../assets/img/logo2.png" alt=""></a> -->
   </div>
 
   <div class="registration-form">

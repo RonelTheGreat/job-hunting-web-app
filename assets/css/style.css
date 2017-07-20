@@ -363,10 +363,10 @@ main .job .content .check-out-job:hover{
 }
 .job-form textarea:focus{
   outline: none;
-  border: 2px solid rgb(5, 57, 107);
+  border: 2px solid #0f85d1;
 }
 .job-form textarea:hover{
-  border: 2px solid rgb(15, 89, 161);
+  border: 2px solid #3498db;
 }
 
 .job-form .salary{

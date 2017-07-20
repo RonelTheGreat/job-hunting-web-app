@@ -1,7 +1,7 @@
 <?php require '../controllers/job-post-controller.php'; ?>
 
 <?php include './partials/header.php';
-      //include './partials/navbar.php';
+      include './partials/navbar.php';
 ?>
 
   <div class="logo">
