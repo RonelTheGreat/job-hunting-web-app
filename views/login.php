@@ -10,8 +10,8 @@
   <div class="login-form">
     <h3><i class="fa fa-user-o" aria-hidden="true"></i> Sign in to your Account</h3>
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post">
-      <p><input type="text" name="username" placeholder="Username" value=""></p>
-      <p><input type="password" name="password" placeholder="Password" value=""></p>
+      <p><input type="text" name="username" placeholder="Username" value="<?= ($username)?? ''?>"></p>
+      <p><input type="password" name="password" placeholder="Password"></p>
       <button class="primary-btn login-btn" type="submit" name="login">Login</button>
       <p>
         <!-- <span>By signing up, you agree to our Terms of Use and Privacy Policy.</span> -->
