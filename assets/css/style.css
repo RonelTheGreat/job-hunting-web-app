@@ -376,16 +376,29 @@ main .job .content .check-out-job:hover{
 }
 
 .profile .personal-info table{
+  font-size: 0.85em;
   border: 1px solid rgb(224, 244, 244);
   border-collapse: collapse;
   width: 99%;
   margin: 6% auto 2%;
 }
+.profile .personal-info table .email{
+  color: #0f85d1;
+}
+.profile .personal-info table .email > i{
+  font-size: 1.5em;
+}
+
 .profile .personal-info table td{
   border: 1px solid rgb(224, 224, 224);
   padding: 1%;
   width: 50%;
 }
+.profile .personal-info table td:first-child{
+  width: 30%;
+}
+
+
 
 /* JOB-POST PAGE */
 .job-form{

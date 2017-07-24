@@ -20,7 +20,7 @@
         </tr>
         <tr>
           <td>Email:</td>
-          <td><?= $userinfo[0]['email']; ?></td>
+          <td><?= $userinfo[0]['email']; ?> &nbsp<a class="email" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
         </tr>
         <tr>
           <td># of Jobs Posted:</td>
@@ -31,10 +31,6 @@
           <td>None</td>
         </tr>
       </table>
-    </div>
-
-    <div class="">
-
     </div>
   </div>
 
