@@ -317,12 +317,13 @@ main .job-header span{
 }
 main .job-header .title{
   font-weight: 500;
+  margin: 0.2em 0em;
+  /*border: 1px dotted black;*/
 }
 main .job-header .title a{
   /*font-weight: 500;*/
   font-size: 1.18em;
   color: #0f85d1;
-  margin: 0.2em 0em;
 }
 main .job-header .date-posted{
   font-size: 0.75em;
