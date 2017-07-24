@@ -12,7 +12,7 @@
     <h2>Post a New Job</h2>
 
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post">
-      <input type="text" name="title" placeholder="Job Title" value="<?= ($title) ?? '';?>" maxlength="50">
+      <input type="text" name="title" placeholder="Job Title" value="<?= ($title) ?? '';?>" maxlength="100">
       <input type="text" name="location" placeholder="Specific Location" value="<?= ($location) ?? '';?>">
 
       <textarea name="description" rows="8" cols="80" placeholder="Description of the Job"></textarea>

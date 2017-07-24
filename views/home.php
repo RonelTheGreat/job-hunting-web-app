@@ -30,24 +30,20 @@
           <!-- JOB HEADER -->
           <div class="job-header">
             <!-- Job title -->
-            <p class="title"><?= $job['title']; ?></p>
-
-            <span class="tag">Job-Type <i class="fa fa-caret-right"></i></span>
-            <span class="job-type">Full-time</span>
+            <h3 class="title"><a href="job.php?job_id=<?= $job['job_id'];?>"><?= $job['title']; ?></a></h3>
+            <!--  Job Type -->
+            <span class="job-type"><i class="fa fa-tag" aria-hidden="true"></i> <?= ucfirst(str_replace('_', '-', $job['job_type']));?></span>
             <!-- Job Location -->
-            <span class="tag">Location <i class="fa fa-caret-right"></i></span>
-            <span class="location"><?= $job['location']; ?></span>
+            <span class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> <?= $job['location']; ?></span>
             <!-- Job salary -->
-            <span class="tag">Salary <i class="fa fa-caret-right"></i></span>
-            <span class="salary"><?= $job['salary'];?></span>
+            <span class="salary"><i class="fa fa-money" aria-hidden="true"></i> <?= $job['salary'];?></span>
 
-            <span class="tag">Posted <i class="fa fa-caret-right"></i></span>
-            <span><?= Misc::timeElapsed($job['date_posted']);?></span>
+            <span><i class="fa fa-clock-o" aria-hidden="true"></i> <?= Misc::timeElapsed($job['date_posted']);?></span>
           </div>
 
           <div class="content">
             <p><?= substr($job['description'], 0, 200); ?>...</p>
-            <span><a class=" check-out-job primary-link" href="job.php">Check out this Job</a></span>
+            <span><a class=" check-out-job primary-link" href="job.php?job_id=<?= $job['job_id'];?>">Check out this Job</a></span>
           </div>
 
 

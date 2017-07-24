@@ -12,14 +12,14 @@ body, html{
 .primary-btn{
   padding: 0.9em;
   color: #fff;
-  background: #3498db;
-  border: 1px solid #3498db;
+  background: #0f85d1;
+  border: 1px solid #0f85d1;
   /*background: rgb(5, 57, 107);
   border: 1px rgb(5, 57, 107);*/
   border-radius: 3px;
 }
 .primary-btn:hover{
-  background: #0f85d1;
+  background: #066CAF;
 }
 
 input[type=text], input[type=password], input[type=email]{
@@ -52,12 +52,22 @@ a:hover{
 }
 
 .primary-link, visited{
-  background: #3498db;
+  background: #0f85d1;
   color: #fff;
   border-radius: 2px;
 }
 .primary-link:hover{
+  background: #066CAF;
+  /*background: red;*/
   text-decoration: underline;
+}
+
+.tag{
+  padding: 0.1em 0.5em;
+  font-size: 0.7em;
+  color: rgb(73, 73, 73);
+  border-radius: 2px;
+  background: rgb(224, 224, 224);
 }
 
 
@@ -90,7 +100,7 @@ nav img {
   margin: 0;
   padding: 0;
   /*border-bottom: 2px solid rgb(5, 57, 107);*/
-  background: #3498db;
+  background: #0f85d1;
   /*border-bottom: 1px solid rgb(224, 224, 224);*/
 }
 
@@ -112,13 +122,13 @@ nav img {
   display: none;
   border: 1px solid rgb(224, 224, 224);
   background: #fff;
-  margin-top: 1.4em;
+  margin-top: 1.5em;
   text-align: center;
 }
 
 .top-nav .acc-settings .dropdown a, visited{
   text-decoration: none;
-  color: #3498db;
+  color: #0f85d1;
   border: 1px solid rgb(224, 224, 224);
   display: block;
   padding: 0.5em;
@@ -201,7 +211,7 @@ nav img {
 }
 
 .login-form a, visited {
-  color: #3498db;
+  color: #0f85d1;
   padding: 0.8em;
   margin: 0.3em;
 }
@@ -276,6 +286,7 @@ main .search-btn:hover{
 }
 
 main .job-posts {
+  font-size: 0.95em;
   position: relative;
   text-align: center;
   /*border: 1px solid rgb(229, 229, 229);*/
@@ -288,7 +299,7 @@ main .job-posts {
 }
 
 main .job{
-  border: 1px solid rgb(237, 245, 225);
+  border-bottom: 1px solid rgb(224, 224, 224);
   width: 94%;
   margin: 1% auto;
   text-align: left;
@@ -296,24 +307,22 @@ main .job{
 }
 
 main .job-header span{
-  font-size: 0.7em;
-  color: rgb(125, 125, 125);
+  font-size: 0.8em;
+  color: rgb(73, 73, 73);
+  /*border: 1px dotted black;*/
+  padding-left: 0.2em;
 }
 main .job-header .title{
+  font-weight: 500;
+}
+main .job-header .title a{
+  /*font-weight: 500;*/
   font-size: 1.18em;
-  color: rgb(15, 89, 161);
+  color: #0f85d1;
   margin: 0.2em 0em;
 }
 main .job-header .date-posted{
   font-size: 0.75em;
-}
-
-main .job-header .tag{
-  padding: 0.1em 0.5em;
-  font-size: 0.7em;
-  color: rgb(73, 73, 73);
-  border-radius: 2px;
-  background: rgb(224, 224, 224);
 }
 
 main .job .content{
@@ -321,14 +330,13 @@ main .job .content{
   font-size: 0.9em;
 }
 main .job .content .check-out-job{
-  margin-left: 75%;
+  margin-left: 80%;
   padding: 0.5em;
   font-size: 0.9em;
   border-radius: 2px;
 }
 main .job .content .check-out-job:hover{
   color: #fff;
-  background: #0f85d1;
 }
 
 
@@ -388,18 +396,44 @@ main .job .content .check-out-job:hover{
   background-image: url('img/chevron_down.png');
 }
 
-/*.job-form .fa-chevron-down{
-  position: absolute;
-  right: 1em;
-  bottom: 17%;
-  right: 10%;
-}*/
-
 .job-form .postjob-btn{
   text-transform: uppercase;
   bottom: 1%;
   margin: 0.8%;
   padding: 0.8em 1em;
+}
+
+/* JOB-VIEW PAGE */
+.job-view{
+  /*border: 1px dotted black;*/
+  min-height: 40em;
+}
+.job-view .title{
+  width: 50%;
+  font-weight: 500;
+  margin: 3% 10%;
+}
+
+.job-view .job-view-header{
+  /*border: 1px dotted black;*/
+  /*font-size: 0.8em;*/
+  width: 55%;
+  margin: 3% 10%;
+}
+.job-view .job-view-header span{
+  /*border: 1px dotted black;*/
+  font-size: 0.85em;
+}
+
+.job-view .job{
+  margin: 5% 10%;
+  width: 50%;
+  padding: 2%;
+  background: #fff;
+  border: 2px solid rgb(224, 224, 224);
+}
+.job-view .job .job-description{
+  font-size: 0.95em;
 }
 
 

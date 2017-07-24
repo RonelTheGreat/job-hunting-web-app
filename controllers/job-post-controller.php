@@ -8,7 +8,7 @@
   $jobtype = '';
 
   if($user->isLoggedIn()){
-    $user_id = $userinfo[0]['user_id']; 
+    $user_id = $userinfo[0]['user_id'];
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
       if(!empty($_POST['title'])){
@@ -20,7 +20,7 @@
       }
 
       if(!empty($_POST['description'])){
-        $description = Misc::sanitize($_POST['description']);
+        $description = $_POST['description'];
       }
 
       if(!empty($_POST['salary'])){
