@@ -70,7 +70,7 @@
 
           // set cookie for the logged in user and redirect to homepage
           setcookie('JHID', $cookie, time() + (7 * 24 * 60 * 60), '/');
-          $this->redirectTo('/job-hunting-web-app/views/home.php');
+          $this->redirectTo('/jobhunt/views/home.php');
         }
       }
     }
@@ -113,7 +113,7 @@
       unset($_COOKIE['JHID']);
       // delete cookie from DB and redirect
       $this->query('DELETE FROM login_tokens WHERE user_id = :user_id', array(':user_id' => $this->user_id));
-      $this->redirectTo('/job-hunting-web-app/views/login.php');
+      $this->redirectTo('/jobhunt/views/login.php');
     }
 
 

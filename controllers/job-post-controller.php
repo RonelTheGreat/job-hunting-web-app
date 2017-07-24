@@ -41,7 +41,7 @@
                           ':description' => $description,
                           ':salary'      => $salary,
                           ':job_type'    => $jobtype));
-        $user->redirectTo('/job-hunting-web-app/views/home.php');
+        $user->redirectTo('/jobhunt/views/home.php');
       }
     }
   }

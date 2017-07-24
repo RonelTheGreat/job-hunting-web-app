@@ -27,7 +27,7 @@
       $user->query('UPDATE users SET password = :password WHERE user_id = :user_id',
                     array(':password' => $hashed_password,
                           ':user_id'  => $userinfo[0]['user_id']));
-      $user->redirectTo('/job-hunting-web-app/views/home.php');
+      $user->redirectTo('/jobhunt/views/home.php');
     }
 
   }
