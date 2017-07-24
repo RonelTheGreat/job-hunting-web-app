@@ -4,11 +4,11 @@
 
   <div class="logo">
     <!-- <img src="../assets/img/topnav.png" alt=""> -->
-    <!-- <a href="home.php"><img src="../assets/img/logo2.png" alt=""></a> -->
+    <a href="home.php"><img src="../assets/img/logo_sample.png" alt=""></a>
   </div>
 
   <div class="registration-form">
-    <h2>Create a New Account</h2>
+    <h2><i class="fa fa-user-plus" aria-hidden="true"></i> Create a New Account</h2>
 
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post">
 

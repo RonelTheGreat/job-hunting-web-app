@@ -115,6 +115,9 @@ nav img {
 .top-nav .acc-settings .username{
   color: #fff;
 }
+.top-nav .acc-settings .username > a{
+  font-size: 1em;
+}
 .top-nav .acc-settings:hover .dropdown{
   display: block;
 }
@@ -265,21 +268,21 @@ main .post-job-link a, visited{
   text-decoration: none;
   padding: 0.9em 0.9em;
   /*border: 2px solid rgb(15, 89, 163);*/
-  background: #3498db;
+  background: #0f85d1;
   color: #fff;
   /*border: 2px solid rgb(15, 89, 161);*/
   border-radius: 2px;
 }
 main .post-job-link > a:hover{
   text-decoration: underline;
-  background: #0f85d1;
+  background: #066CAF;
   /*color: rgb(5, 57, 107);*/
   /*border: 2px solid rgb(5, 57, 107);*/
 }
 
 main .search-btn{
   border: none;
-  color: #3498db;
+  color: #0f85d1;
 }
 main .search-btn:hover{
   color: #fff;
@@ -339,6 +342,49 @@ main .job .content .check-out-job:hover{
   color: #fff;
 }
 
+
+/* PROFILE PAGE*/
+.profile{
+  min-height: 25em;
+  /*border: 1px dotted black;*/
+}
+.profile .personal-info{
+  position: relative;
+  margin: 5% 8%;
+  width: 32%;
+  /*min-height: 20em;*/
+  border-radius: 2px;
+  border: 2px solid rgb(224, 224, 224);
+  background: #fff;
+}
+.profile .personal-info .header{
+  font-weight: 500;
+  border: 2px solid #0f85d1;
+  background: #0f85d1;
+  color: #fff;
+  border-radius: 2px;
+  text-align: center;
+}
+.profile .personal-info .header img{
+  width: 25%;
+  position: absolute;
+  top: -3%;
+  left: 1%;
+  /*border: 1px dotte d purple;*/
+  border-radius: 50%;
+}
+
+.profile .personal-info table{
+  border: 1px solid rgb(224, 244, 244);
+  border-collapse: collapse;
+  width: 99%;
+  margin: 6% auto 2%;
+}
+.profile .personal-info table td{
+  border: 1px solid rgb(224, 224, 224);
+  padding: 1%;
+  width: 50%;
+}
 
 /* JOB-POST PAGE */
 .job-form{
@@ -422,7 +468,11 @@ main .job .content .check-out-job:hover{
 }
 .job-view .job-view-header span{
   /*border: 1px dotted black;*/
+  padding-right: 0.4em;
   font-size: 0.85em;
+}
+.job-view .job-view-header span i {
+  font-size: 1.5em;
 }
 
 .job-view .job{
@@ -434,6 +484,22 @@ main .job .content .check-out-job:hover{
 }
 .job-view .job .job-description{
   font-size: 0.95em;
+}
+
+.job-view .job .login-to-apply{
+  position: relative;
+  left: 50%;
+  font-size: 0.85em;
+  color: rgb(73, 73, 73);
+}
+.job-view .job .login-now{
+  padding: 0.6em 0.7em;
+  font-size: 0.9em;
+}
+.job-view .job .apply-now{
+  padding: 0.6em 0.7em;
+  position: relative;
+  left: 85%;
 }
 
 

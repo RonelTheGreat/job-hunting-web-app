@@ -10,8 +10,6 @@
     <h2 class="title"><?= $job[0]['title'];?></h2>
     <!-- JOB HEADING -->
     <div class="job-view-header">
-      <!-- Job title -->
-
       <span class="job-type"><i class="fa fa-tag" aria-hidden="true"></i> <?= ucfirst(str_replace('_', '-', $job[0]['job_type']));?></span>
       <!-- Job Location -->
       <span class="location"><i class="fa fa-map-marker" aria-hidden="true"></i> <?= $job[0]['location']; ?></span>
@@ -27,6 +25,11 @@
       <div class="job-description">
         <p><?= $job[0]['description'];?></p>
       </div>
+      <?php if (!$user->isLoggedIn()): ?>
+      <span class="login-to-apply">Want to apply for this Job? <a class="primary-link login-now" href="login.php">Login Now !</a></span>
+      <?php else: ?>
+      <a class="primary-link apply-now" href="#">Apply Now !</a>
+      <?php endif; ?>
     </div>
 
   </div>
