@@ -9,7 +9,7 @@
 
   <div class="registration-form">
     <h2><i class="fa fa-user-plus" aria-hidden="true"></i> Create a New Account</h2>
-
+    <span class="error"><?= ($error_msg) ?? '';?></span>
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post">
 
       <input type="text" name="fname" placeholder="First Name" value="<?= ($fname) ?? '';?>">
