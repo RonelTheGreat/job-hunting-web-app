@@ -84,10 +84,23 @@ a:hover{
 
 
 .error{
-  display: block;
+  position: relative;
+  top: 4em;
+  margin: 0 auto;
+  min-height: 4em;
+  width: 32%;
+  line-height: 4em;
+  border: 1px solid #AE3c42;
+  background: #fba6aa;
+  border-radius: 2px;
   text-align: center;
-  color: #ff0000;
+  color: #84181d;
   font-size: 0.8em;
+}
+.error > i{
+  float: right;
+  margin-top: 5%;
+  margin-right: 2%;
 }
 
 
@@ -203,6 +216,10 @@ nav img {
 
 
 /* LOGIN FORM*/
+
+.login-error{
+  top: 8em;
+}
 .login-form{
   font-size: 1em;
   width: 30%;

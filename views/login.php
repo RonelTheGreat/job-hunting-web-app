@@ -7,10 +7,14 @@
     <a href="home.php" title="Go back to JobHunt"><img src="../assets/img/logo_sample.png" alt=""></a>
   </div>
 
+  <?php if (!empty($error_msg)): ?>
+    <div class="login-error error">
+      <span><?= $error_msg;?></span><i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+  <?php endif; ?>
+
   <div class="login-form">
     <h3><i class="fa fa-user-o" aria-hidden="true"></i> Sign in to your Account</h3>
-
-    <span class="error"><?= ($error_msg) ?? '';?></span>
 
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post">
       <p><input type="text" name="username" placeholder="Username" value="<?= ($username)?? ''?>"></p>

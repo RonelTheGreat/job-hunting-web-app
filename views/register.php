@@ -7,9 +7,15 @@
     <a href="home.php"><img src="../assets/img/logo_sample.png" alt=""></a>
   </div>
 
+  <?php if (!empty($error_msg)): ?>
+    <div class="error">
+      <span><?= $error_msg;?></span><i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+  <?php endif; ?>
+
   <div class="registration-form">
     <h2><i class="fa fa-user-plus" aria-hidden="true"></i> Create a New Account</h2>
-    <span class="error"><?= ($error_msg) ?? '';?></span>
+
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post">
 
       <input type="text" name="fname" placeholder="First Name" value="<?= ($fname) ?? '';?>">
