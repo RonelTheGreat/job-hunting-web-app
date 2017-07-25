@@ -3,6 +3,7 @@
 
   $username = '';
   $password = '';
+  $error_msg = '';
 
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
@@ -19,6 +20,10 @@
     // final check
     if(!empty($username && $password)){
       $user = new User('', '', '', $username, $password);
-      $user->authorize();
+      if(!$user->authorize()){
+        $error_msg = 'Incorrect Username or Password';
+      }
+    } else {
+      $error_msg = 'Incorrect Username or Password';
     }
   }

@@ -9,6 +9,9 @@
 
   <div class="login-form">
     <h3><i class="fa fa-user-o" aria-hidden="true"></i> Sign in to your Account</h3>
+
+    <span class="error"><?= ($error_msg) ?? '';?></span>
+
     <form action="<?= htmlentities($_SERVER['PHP_SELF']);?>" method="post">
       <p><input type="text" name="username" placeholder="Username" value="<?= ($username)?? ''?>"></p>
       <p><input type="password" name="password" placeholder="Password"></p>

@@ -62,13 +62,6 @@ a:hover{
   text-decoration: underline;
 }
 
-.tag{
-  padding: 0.1em 0.5em;
-  font-size: 0.7em;
-  color: rgb(73, 73, 73);
-  border-radius: 2px;
-  background: rgb(224, 224, 224);
-}
 
 
 /* LOGO */
@@ -87,6 +80,14 @@ a:hover{
   /*width: 160px;*/
   /*top: 0;*/
   /*border: 1px dotted white;*/
+}
+
+
+.error{
+  display: block;
+  text-align: center;
+  color: #ff0000;
+  font-size: 0.8em;
 }
 
 
