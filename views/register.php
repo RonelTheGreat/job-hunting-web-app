@@ -8,7 +8,7 @@
   </div>
 
   <?php if (!empty($error_msg)): ?>
-    <div class="error">
+    <div class="error" id="error">
       <span><?= $error_msg;?></span><i class="fa fa-times" aria-hidden="true"></i>
     </div>
   <?php endif; ?>
